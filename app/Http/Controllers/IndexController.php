@@ -24,6 +24,6 @@ class IndexController extends Controller
         $options = Option::all();
         $groups = Group::all();
         $units = Unit::all();
-        return view('index', compact('marks', 'vehicles', 'parts', 'categories', 'parameters', 'options', 'groups', 'unit'));
+        return view('index', compact('marks', 'vehicles', 'parts', 'categories', 'parameters', 'options', 'groups', 'units'));
     }
 }
