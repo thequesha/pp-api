@@ -23,6 +23,14 @@
 
             </div>
             <div class="col">
+                @include('sections.groups_card')
+
+            </div>
+            <div class="col">
+                @include('sections.units_card')
+
+            </div>
+            <div class="col">
                 @include('sections.parts_card')
 
             </div>
