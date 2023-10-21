@@ -13,6 +13,12 @@
                 @include('sections.vehicles_card')
             </div>
             <div class="col">
+                @include('sections.parameters_card')
+            </div>
+            <div class="col">
+                @include('sections.options_card')
+            </div>
+            <div class="col">
                 @include('sections.part_categories_card')
 
             </div>

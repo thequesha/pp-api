@@ -4,15 +4,14 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Mark extends Model
+class Unit extends Model
 {
     protected $fillable = [
         'name',
     ];
 
-    public function vehicles()
+    public function parts()
     {
-        return $this->hasMany(Vehicle::class);
+        return $this->belongsToMany(Part::class, 'unit_parts');
     }
-
 }

@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use App\Models\Category;
 use App\Models\Mark;
+use App\Models\Option;
+use App\Models\Parameter;
 use App\Models\Part;
 use App\Models\Vehicle;
 use Illuminate\Http\Request;
@@ -16,6 +18,8 @@ class IndexController extends Controller
         $vehicles = Vehicle::all();
         $parts = Part::all();
         $categories = Category::all();
-        return view('index', compact('marks', 'vehicles', 'parts', 'categories'));
+        $parameters = Parameter::all();
+        $options = Option::all();
+        return view('index', compact('marks', 'vehicles', 'parts', 'categories', 'parameters', 'options'));
     }
 }

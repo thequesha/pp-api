@@ -1,6 +1,7 @@
 <?php
 
-use App\Models\Category;
+use App\Models\Option;
+use App\Models\Vehicle;
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
@@ -11,12 +12,10 @@ return new class extends Migration {
      */
     public function up(): void
     {
-        Schema::create('categories', function (Blueprint $table) {
+        Schema::create('vehicle_options', function (Blueprint $table) {
             $table->id();
-            $table->string('name');
-            $table->foreignIdFor(Category::class, 'parent_id')->nullable()->constrained('categories')->nullOnDelete();
-
-
+            $table->foreignIdFor(Vehicle::class, 'vehicle_id')->constrained()->cascadeOnDelete();
+            $table->foreignIdFor(Option::class, 'option_id')->constrained()->cascadeOnDelete();
             $table->timestamps();
         });
     }
@@ -26,6 +25,6 @@ return new class extends Migration {
      */
     public function down(): void
     {
-        Schema::dropIfExists('categories');
+        Schema::dropIfExists('vehicle_options');
     }
 };

@@ -7,5 +7,15 @@ use Illuminate\Database\Eloquent\Model;
 
 class Vehicle extends Model
 {
-    use HasFactory;
+    protected $fillable = ['name'];
+
+    public function mark()
+    {
+        return $this->belongsTo(Mark::class);
+    }
+
+    public function options()
+    {
+        return $this->belongsToMany(Option::class, 'vehicle_options');
+    }
 }
