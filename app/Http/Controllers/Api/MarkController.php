@@ -16,7 +16,11 @@ class MarkController extends Controller
     {
         $mark = Mark::inRandomOrder()->first();
 
-        return response()->json($mark->name);
+        $marks = ['Toyoyta', 'Lexus'];
+
+        $markName = $marks[array_rand($marks)];
+
+        return response()->json($markName);
     }
 
     /**
